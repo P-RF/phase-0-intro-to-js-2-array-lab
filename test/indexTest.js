@@ -79,3 +79,61 @@ describe('index.js', function () {
     });
   });
 });
+
+let cats = ["Milo", "Otis", "Garfield"];
+
+function destructivelyAppendCat(Ralph) {
+  cats.push(Ralph); 
+  // pushes the "Ralph" argument to the end of 'cats' array
+}
+
+function destructivelyPrependCat(Bob) {
+  cats.unshift(Bob);
+  // unshifts the "Bob" argument to the beginning of 'cats' array
+}
+
+function destructivelyRemoveLastCat(Garfield) {
+  cats.pop();
+  // removes last element "Garfield"
+}
+
+function destructivelyRemoveFirstCat(Milo) {
+  cats.shift();
+  // removes first element "Milo"
+}
+
+function appendCat(Broom) {
+  // function to append element to 'cats' array and return a new array
+  return [...cats, Broom];
+  // create a new array with 'cats' and append 'Broom'
+}
+
+  cats;
+  // ["Milo", "Otis", "Garfield"]
+
+  appendCat;
+  // ["Milo", "Otis", "Garfield", "Broom"]
+
+  function prependCat(Arnold) {
+    // function to prepend element to 'cats'and prepend 'Arnold'
+    return [Arnold, ...cats];
+    // create a new array with 'cats' and prepend 'Arnold'
+  }
+
+  cats;
+  // ["Milo", "Otis", "Garfield"]
+
+  prependCat;
+  // ["Arnold", "Milo", "Otis", "Garfield"]
+
+function removeLastCat() {
+  // function to remove the last cat from 'cats' array and return a new array
+  return cats.slice(0, -1);
+    // use slice() to create a shallow copy of 'cats' array excluding last element
+}
+
+function removeFirstCat() {
+    // function to remove the first cat from 'cats' array and return a new array
+  return cats.slice(1);
+    // use slice() to create a shallow copy of 'cats' array excluding first element
+}
